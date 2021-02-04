@@ -140,17 +140,22 @@ $("#selectCity").on("click", function(event) {
 
 function pageLoad (lastCity) {
     
-    var searchCityDiv = $("<button class='btn border text-muted mt-1 shadow-sm bg-white rounded' style='width: 12rem;'>").text(lastCity).on("click", e => {
+    var searchCityDiv = $("<button class='btn border text-muted mt-1 shadow-sm bg-white rounded' style='width: 12rem;'>")
+    .text(lastCity).on("click", e => {
         e.preventDefault();
     });
+
     var searchCity = $("<div>").attr("id", "searchCity");
     searchCity.append(searchCityDiv)
+
     $("#cityHistorySearchDiv").prepend(searchCity);
 }
+
 var searchHistory = JSON.parse(localStorage.getItem("cityName")) || [];
 for (var i = 0; i < searchHistory.length; i ++){
     pageLoad (searchHistory[i])
 }
+
 $("#searchCity").on('click', '.btn', function(event) {
 // event.preventDefault();
     console.log($(this).text());
