@@ -1,0 +1,12 @@
+.body {
+    background-color: rgb(41, 41, 14);
+}
+
+.jumbotron {
+    background-image: url(yellowumbrella.jpg);
+    background-size: cover;
+}
+
+.fiveDayForecastDiv {
+    background-color: rgb(41, 41, 14);
+}
