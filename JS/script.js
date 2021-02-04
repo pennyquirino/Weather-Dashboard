@@ -137,9 +137,12 @@ $("#selectCity").on("click", function(event) {
 });
 
 // Make buttons for history search
+
 function pageLoad (lastCity) {
     
-    var searchCityDiv = $("<button class='btn border text-muted mt-1 shadow-sm bg-white rounded' style='width: 12rem;'>").text(lastCity);
+    var searchCityDiv = $("<button class='btn border text-muted mt-1 shadow-sm bg-white rounded' style='width: 12rem;'>").text(lastCity).on("click", e => {
+        e.preventDefault();
+    });
     var searchCity = $("<div>").attr("id", "searchCity");
     searchCity.append(searchCityDiv)
     $("#cityHistorySearchDiv").prepend(searchCity);
