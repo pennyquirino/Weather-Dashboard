@@ -149,6 +149,8 @@ function pageLoad (lastCity) {
     searchCity.append(searchCityDiv)
 
     $("#cityHistorySearchDiv").prepend(searchCity);
+
+    
 }
 
 var searchHistory = JSON.parse(localStorage.getItem("cityName")) || [];
@@ -160,5 +162,5 @@ $("#searchCity").on('click', '.btn', function(event) {
 // event.preventDefault();
     console.log($(this).text());
     citySearch($(this).text());
-
+    citySearch(lastCity)
 });
